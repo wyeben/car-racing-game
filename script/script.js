@@ -46,7 +46,7 @@ function updateGame() {
         if (obstacles[i].y > canvas.height + obstacles[i].height / 2) {
             obstacles.splice(i, 1);
             i--;
-        
+    
             score++;
         }
     }
