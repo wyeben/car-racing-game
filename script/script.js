@@ -83,7 +83,7 @@ function updateGame() {
 
         const obstacle = {
             x: laneWidth * lane + laneWidth / 2,
-            
+        
             y: -30,
             width: obstacleWidth,
             height: obstacleHeight,
