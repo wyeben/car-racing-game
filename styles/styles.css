@@ -4,12 +4,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #222;
+    background: url('../images/stone-pic.jpg') no-repeat center center/cover;
 }
 
 canvas {
     border: 1px solid #fff;
     display: block;
     margin: auto;
-   
+   border-radius: 5px   ;
 }

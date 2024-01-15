@@ -7,6 +7,7 @@ const car = {
     width: 50,
     height: 60,
     speed: 5,
+    lane: 3,
 };
 
 const carImage = document.getElementById("carImage");
@@ -15,8 +16,12 @@ const obstacleCarImages = [
     document.getElementById("obstacleCar1Image"),
     document.getElementById("obstacleCar2Image"),
     document.getElementById("obstacleCar3Image"),
-    document.getElementById("obstacleCar4Image")
-
+    document.getElementById("obstacleCar4Image"),
+    document.getElementById("obstacleCar5Image"),
+    document.getElementById("obstacleCar6Image"),
+    document.getElementById("obstacleCar7Image"),
+    document.getElementById("obstacleCar8Image"),
+    document.getElementById("obstacleCar9Image")
 
 ];
 
@@ -26,14 +31,13 @@ function drawCar(x, y, width, height, image) {
 
 let obstacles = [];
 let score = 0;
-let paused = false; 
+let paused = false;
 
 function drawObstacles() {
     for (let obstacle of obstacles) {
         drawCar(obstacle.x, obstacle.y, obstacle.width, obstacle.height, obstacle.image);
     }
 }
-
 
 function updateGame() {
     if (paused) return;
@@ -74,8 +78,11 @@ function updateGame() {
         const obstacleWidth = 50;
         const obstacleHeight = 60;
 
+        const laneWidth = canvas.width / 6; 
+        const lane = car.lane;
+
         const obstacle = {
-            x: Math.random() * (canvas.width - obstacleWidth),
+            x: laneWidth * lane + laneWidth / 2,
             y: -30,
             width: obstacleWidth,
             height: obstacleHeight,
@@ -86,27 +93,26 @@ function updateGame() {
     }
 }
 
-
+const roadTexture = new Image();
+roadTexture.src = "../images/road-image1.jpeg";
 
 function drawLanes() {
-    ctx.fillStyle = "#000"; 
-    ctx.fillRect(0, 0, canvas.width, canvas.height); 
+    ctx.fillStyle = "#000";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    const laneColor = "#888"; 
-    const laneWidth = 10; 
-    const numLanes = 7; 
+    const numLanes = 6;
 
-    for (let i = 1; i < numLanes; i++) {
-        const laneX = (canvas.width / numLanes) * i - laneWidth / 2;
-        ctx.fillStyle = laneColor;
-        ctx.fillRect(laneX, 0, laneWidth, canvas.height);
+    for (let i = 0; i < numLanes; i++) {
+        const laneX = (canvas.width / numLanes) * i;
+        ctx.drawImage(roadTexture, laneX, 0, canvas.width / numLanes, canvas.height);
     }
 }
+
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    drawLanes(); 
+    drawLanes();
     drawCar(car.x, car.y, car.width, car.height, carImage);
     drawObstacles();
 
@@ -115,7 +121,6 @@ function draw() {
     ctx.fillText("Score: " + score, 10, 30);
     ctx.fillText(paused ? "Paused" : "Press P to Pause", canvas.width - 160, 30);
 }
-
 
 function gameLoop() {
     updateGame();
@@ -135,10 +140,12 @@ function togglePause() {
 }
 
 window.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft" && car.x - car.width / 2 > 0) {
-        car.x -= car.speed;
-    } else if (e.key === "ArrowRight" && car.x + car.width / 2 < canvas.width) {
-        car.x += car.speed;
+    if (e.key === "ArrowLeft" && car.lane > 0) {
+        car.lane--;
+        car.x = (canvas.width / 6) * car.lane + (canvas.width / 6) / 2;
+    } else if (e.key === "ArrowRight" && car.lane < 5) {
+        car.lane++;
+        car.x = (canvas.width / 6) * car.lane + (canvas.width / 6) / 2;
     } else if (e.key === "ArrowUp" && car.y - car.height / 2 > 0) {
         car.y -= car.speed;
     } else if (e.key === "ArrowDown" && car.y + car.height / 2 < canvas.height) {
@@ -147,6 +154,5 @@ window.addEventListener("keydown", (e) => {
         togglePause();
     }
 });
-
 
 gameLoop();
