@@ -105,7 +105,7 @@ roadTexture.onload = () => {
                 x: laneWidth * lane + laneWidth / 2,
                 y: -30,
                 width: obstacleWidth,
-    
+
                 height: obstacleHeight,
                 image: obstacleCarImages[Math.floor(Math.random() * obstacleCarImages.length)],
             };
