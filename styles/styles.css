@@ -8,8 +8,7 @@ body {
 }
 
 canvas {
-    border: 1px solid #fff;
+    border: none;
     display: block;
     margin: auto;
-   border-radius: 5px   ;
 }
