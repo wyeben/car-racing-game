@@ -4,11 +4,39 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('/images/stone-pic.jpg') no-repeat center center/cover;
+    background: url('/images/game-clip1.jpg') no-repeat center center/cover;
 }
 
 canvas {
     border: none;
     display: block;
     margin: auto;
+}
+
+.play-again{
+    background: url('/images/play-image2.webp') no-repeat center center;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+.go-back{
+    background: url('/images/go-back-image2.png') no-repeat center center;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+.game-over-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 40px;
 }

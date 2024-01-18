@@ -4,7 +4,12 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #000;
     color: #fff;
-    height: 100vh;
+}
+
+.con{
+    margin: 0;
+    padding: 0;
+
 }
 
 header {
@@ -26,7 +31,6 @@ header {
 }
 
 .brand-name{
-    /* background-color: green; */
     text-decoration: line-through;
     text-decoration-color: green;
     padding: 1px;
@@ -34,11 +38,6 @@ header {
     border-radius: 5px;
 }
 
-/* span{
-    background-color: green;
-    padding: 2px;
-    margin: 0;
-} */
 
 h1{
     display: flex;
@@ -97,6 +96,11 @@ footer {
     color: white;
     cursor: pointer;
     font-size: 20px;
+}
+
+.side-btn:hover{
+    background-color: rgb(193, 187, 187);
+    color: #333;
 }
 
 @keyframes textAnimation {

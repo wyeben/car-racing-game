@@ -7,6 +7,16 @@
     <title>Wye Car Racer</title>
 </head>
 <body>
+    <audio id="collisionSound">
+        <source src="/images/collision-reverb-103405.mp3" type="audio/mp3">
+      </audio>
+      
+    <audio id="gameSound" loop>
+        <source src="/images/muscle-car-sounds-49337.mp3" type="audio/mp3">
+      </audio>
+      
+    <div id="gameOverMessage" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.7); padding: 20px; border-radius: 10px; color: #fff; font-size: 30px; text-align: center;"></div>
+
     <canvas id="gameCanvas" width="1270" height="570"></canvas>
 
 
