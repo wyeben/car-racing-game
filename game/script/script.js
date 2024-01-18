@@ -300,7 +300,6 @@ function updateGame() {
         } else if (e.key === 'b' || e.key === 'B') {
             goBack();
         }
-
           else if (e.key === 's' || e.key === 'S') {
             toggleSound();
         }
