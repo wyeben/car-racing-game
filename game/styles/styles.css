@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('/images/stone-pic.jpg') no-repeat center center/cover;
+}
+
+canvas {
+    border: none;
+    display: block;
+    margin: auto;
+}
