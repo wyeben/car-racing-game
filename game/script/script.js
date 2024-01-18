@@ -296,11 +296,18 @@ function updateGame() {
             car.y += car.speed;
         } else if (e.key === "p" || e.key === "P" || e.key === " ") {
             togglePause();
+            toggleSound();
         } else if (e.key === 'b' || e.key === 'B') {
             goBack();
         }
           else if (e.key === 's' || e.key === 'S') {
             toggleSound();
+        }
+          else if (e.key === 'd' || e.key === 'D') {
+            car.speed += 5;
+        }
+          else if (e.key === 'c' || e.key === 'C') {
+            car.speed -= 5;
           }
     });
 

@@ -54,7 +54,6 @@ sideButton.addEventListener('click', () => {
     document.location.href = '../game/index.html';
 })
 
-
 startDisplay();
 writeUpDisplay();
 

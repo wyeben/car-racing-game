@@ -54,7 +54,6 @@ section {
 
 #gameCanvas {
     border: 2px solid #fff;
-    background: url();
 }
 
 footer {
@@ -102,6 +101,7 @@ footer {
     background-color: rgb(193, 187, 187);
     color: #333;
 }
+
 
 @keyframes textAnimation {
     0% {
