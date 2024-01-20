@@ -23,7 +23,7 @@ function startDisplay() {
                 image.style.visibility = "visible";
                 image.style.opacity = 1;
             } else {
-            
+        
                 image.style.visibility = "hidden";
                 image.style.opacity = 0;
             }
