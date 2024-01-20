@@ -31,7 +31,7 @@ let score = 0;
 let paused = false;
 let roadOffset = 0;
 
-let countdown = 4;
+let countdown = 6;
 let gameInterval;
 let gameOverModal;
 let soundMuted = true;

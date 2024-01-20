@@ -39,7 +39,7 @@ function writeUpDisplay() {
 
     function toggleEffects() {
         gameHubText.classList.remove("write-effect", "delete-effect");
-        void gameHubText.offsetWidth; 
+        // void gameHubText.offsetWidth; 
         gameHubText.classList.add("write-effect");
         setTimeout(function() {
             gameHubText.classList.add("delete-effect");
