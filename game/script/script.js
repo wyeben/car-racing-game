@@ -193,7 +193,6 @@ function updateGame() {
         modalContent.style.textAlign = 'center';
         modalContent.style.color = '#fff';
         modalContent.innerHTML = `<h1>Game Over</h1><h3>Score: ${score}</h3>
-
                                   <div class="game-over-btn"><button class="play-again"></button>
                                   <button class="go-back"></button></div>`;
 
