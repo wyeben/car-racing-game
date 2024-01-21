@@ -4,11 +4,14 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #000;
     color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50px;
 }
 
 .con{
     margin: 0;
     padding: 0;
+  
 
 }
 
@@ -16,6 +19,9 @@ header {
     background-color: #333;
     padding: 10px;
     text-align: center;
+    border: 2px solid #fff;
+    border-radius: 50px;
+
 }
 
 .game-logo{
@@ -60,6 +66,8 @@ footer {
     background-color: #333;
     padding: 10px;
     text-align: center;
+    border: 2px solid #fff;
+    border-radius: 50px;
 }
 
 

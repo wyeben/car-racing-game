@@ -51,7 +51,7 @@ function writeUpDisplay() {
 
 const sideButton = document.querySelector('.play-demo');
 sideButton.addEventListener('click', () => {
-    document.location.href = '../game/index.html';
+    document.location.href = '../demo-games-page/demo-games-page.html';
 })
 
 startDisplay();

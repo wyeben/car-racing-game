@@ -31,13 +31,16 @@ let score = 0;
 let paused = false;
 let roadOffset = 0;
 
-let countdown = 6;
+let countdown = 21;
 let gameInterval;
 let gameOverModal;
 let soundMuted = true;
+let initialScrollingCompleted = false;
+
 
 roadTexture.onload = () => {
     roadOffset = canvas.height;
+    initialScrollingCompleted = false;
     playGameSound();
 
     function drawCar(x, y, width, height, image) {
@@ -81,9 +84,9 @@ function playCollisionSound() {
         collisionSound.play();
         collisionSound.onended = function () {
             collisionSoundPlaying = false; 
-            if (!paused) {
-                // playGameSound();
-            }
+            // if (!paused) {
+            //     playGameSound();
+            // }
         };
     }
 }
@@ -143,21 +146,38 @@ function updateGame() {
         const laneWidth = canvas.width / 6;
         const lane = car.lane;
 
-        const obstacle = {
-            x: laneWidth * lane + laneWidth / 2,
-            y: -30,
-            width: obstacleWidth,
-            height: obstacleHeight,
-            image: obstacleCarImages[Math.floor(Math.random() * obstacleCarImages.length)],
-        };
+        let obstacleOverlap = true;
+        let newObstacle;
 
-        obstacles.push(obstacle);
+        for (let attempts = 0; attempts < 10 && obstacleOverlap; attempts++) {
+            newObstacle = {
+                x: laneWidth * lane + laneWidth / 2,
+                y: -30,
+                width: obstacleWidth,
+                height: obstacleHeight,
+                image: obstacleCarImages[Math.floor(Math.random() * obstacleCarImages.length)],
+            };
+
+            obstacleOverlap = obstacles.some((existingObstacle) => {
+                const overlapDistanceX = Math.abs(newObstacle.x - existingObstacle.x);
+                const overlapDistanceY = Math.abs(newObstacle.y - existingObstacle.y);
+                return (
+                    overlapDistanceX < newObstacle.width / 2 + existingObstacle.width / 2 &&
+                    overlapDistanceY < newObstacle.height / 2 + existingObstacle.height / 2
+                );
+            });
+        }
+
+        if (!obstacleOverlap) {
+            obstacles.push(newObstacle);
+        }
     }
 
-    roadOffset -= car.speed;
-    if (roadOffset < -canvas.height) {
-        roadOffset += canvas.height;
-    }
+
+    // roadOffset -= car.speed;
+    // if (roadOffset < -canvas.height) {
+    //     roadOffset += canvas.height;
+    // }
 }
 
     
@@ -208,10 +228,19 @@ function updateGame() {
         const laneWidth = canvas.width / numLanes;
         const fullRoadHeight = canvas.height * 2;
 
+        
         for (let i = -1; i <= numLanes; i++) {
             const laneX = laneWidth * i;
             ctx.drawImage(roadTexture, laneX, roadOffset % fullRoadHeight, laneWidth, fullRoadHeight);
         }
+        if (!initialScrollingCompleted) {
+        roadOffset -= car.speed;
+
+        if (roadOffset <= -canvas.height) {
+            roadOffset = -canvas.height;
+            initialScrollingCompleted = true; 
+        }
+    }
     }
 
     function draw() {
@@ -270,7 +299,7 @@ function updateGame() {
 
     function goBack() {
         clearInterval(gameInterval);
-        document.location.href = '../index.html';
+        document.location.href = '../demo-games-page/demo-games-page.html';
 
         
     }
@@ -304,7 +333,6 @@ function updateGame() {
             toggleSound();
         }
           else if (e.key === 'd' || e.key === 'D') {
-            car.speed += 5;
         }
           else if (e.key === 'c' || e.key === 'C') {
             car.speed -= 5;

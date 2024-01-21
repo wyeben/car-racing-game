@@ -1,0 +1,107 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+
+.main-div{
+    border: 2px solid #fff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 95vh;
+    width: 170vh;
+    background-color: #333;
+}
+
+.logo-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.brand-name{
+    text-decoration: line-through;
+    text-decoration-color: green;
+    padding: 1px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+
+h1{
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.game-logo{
+    height: 40px;
+    width: 40px;
+}
+
+.car-racer-div{
+    border: 2px solid #fff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 95vh;
+    width: 170vh;
+    background-color: black;
+}
+
+#carRacerVideo{
+    border: 2px solid #fff;
+    border-radius: 10%;
+    padding: -9px;
+    background: url('/images/car-racer-image.png') no-repeat center center/ cover;
+}
+
+
+.play-demo-btn{
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.play-demo-btn:hover{
+    background-color: rgb(193, 187, 187);
+    color: #333;
+}
+
+.play-and-back-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.back-btn{
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.back-btn:hover{
+    background-color: rgb(193, 187, 187);
+    color: #333;
+}
