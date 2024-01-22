@@ -291,7 +291,7 @@ function updateGame() {
         }
         toggleSound();
         startGame();
-    }    
+    } 
 
     function togglePause() {
         paused = !paused;

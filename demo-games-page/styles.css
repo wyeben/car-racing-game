@@ -7,14 +7,14 @@ body{
 }
 
 .main-div{
-    border: 2px solid #fff;
+    /* border: 2px solid #fff; */
     border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 95vh;
-    width: 170vh;
+    /* height: 100vh;
+    width: 100vh; */
     background-color: #333;
 }
 
@@ -47,19 +47,19 @@ h1{
 }
 
 .car-racer-div{
-    border: 2px solid #fff;
+    /* border: 2px solid #fff; */
     border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 95vh;
-    width: 170vh;
-    background-color: black;
+    /* height: 100vh;
+    width: 170vh; */
+    background-color: rgb(22, 22, 23);
 }
 
 #carRacerVideo{
-    border: 2px solid #fff;
+    /* border: 2px solid #fff; */
     border-radius: 10%;
     padding: -9px;
     background: url('/images/car-racer-image.png') no-repeat center center/ cover;
