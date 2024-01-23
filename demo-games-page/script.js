@@ -16,7 +16,6 @@ const gameInstructions = document.querySelector('.game-instructions');
             if (gameInstructions.style.display === 'none') {
                 gameInstructions.style.display = 'block';
             } else {
-
                 gameInstructions.style.display = 'none';
             }
         });
