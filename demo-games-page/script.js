@@ -8,4 +8,15 @@ function carRacer(){
         document.location.href = '../index.html';
     })
 }
+
+const howToPlayToggle = document.getElementById('how-to-play-toggle');
+const gameInstructions = document.querySelector('.game-instructions');
+
+        howToPlayToggle.addEventListener('click', function() {
+            if (gameInstructions.style.display === 'none') {
+                gameInstructions.style.display = 'block';
+            } else {
+                gameInstructions.style.display = 'none';
+            }
+        });
 carRacer();

@@ -62,9 +62,16 @@ h1{
     /* border: 2px solid #fff; */
     border-radius: 10%;
     padding: -9px;
-    background: url('/images/car-racer-image.png') no-repeat center center/ cover;
+    /* background: url('/images/car-racer-image.png') no-repeat center center/ cover; */
+    overflow: hidden;
 }
 
+
+.video-scn video {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
 
 .play-demo-btn{
     display: flex;
@@ -88,6 +95,7 @@ h1{
     justify-content: center;
     flex-direction: row;
     gap: 5px;
+    margin-top: 10px;
 }
 
 .back-btn{
@@ -104,4 +112,13 @@ h1{
 .back-btn:hover{
     background-color: rgb(193, 187, 187);
     color: #333;
+}
+
+p{
+    margin-bottom: 1px;
+}
+
+#how-to-play-toggle{
+    cursor: pointer;
+    color: royalblue;
 }

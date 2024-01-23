@@ -54,6 +54,12 @@ sideButton.addEventListener('click', () => {
     document.location.href = '../demo-games-page/demo-games-page.html';
 })
 
+const earnBtn = document.querySelector('.earn-btn');
+earnBtn.addEventListener('click', () => {
+
+    alert('Unavailable for now');
+})
+
 startDisplay();
 writeUpDisplay();
 
