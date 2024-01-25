@@ -15,7 +15,7 @@ function displayInstruction(){
 
         howToPlayToggle.addEventListener('click', function() {
             if(gameInstructions.innerHTML.trim() === ''){
-                gameInstructions.innerHTML = ` <p>Move Right: Use the Arrow Right key.</p>
+                gameInstructions.innerHTML = `<p>Move Right: Use the Arrow Right key.</p>
                 <p>Move Left: Use the Arrow Left key.</p>
                 <p>Move Up: Use the Arrow Up key.</p>
                 <p>Move Down: Use the Arrow Down key.</p>
